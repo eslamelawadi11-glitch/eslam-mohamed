@@ -1,0 +1,201 @@
+import { User, Student, Invoice, Message, DashboardStats, Event, GalleryItem, StaffMember } from './types';
+
+export const MOCK_USERS: User[] = [
+  { id: 'u1', name: 'Sarah Manager', role: 'MANAGER', email: 'sarah@nursery.com', avatar: 'https://i.pravatar.cc/150?u=u1', phone: '+1234567890' },
+  { id: 'u2', name: 'John Teacher', role: 'STAFF', email: 'john@nursery.com', avatar: 'https://i.pravatar.cc/150?u=u2', phone: '+1234567891' },
+  { id: 'u3', name: 'Emily Parent', role: 'PARENT', email: 'emily@gmail.com', avatar: 'https://i.pravatar.cc/150?u=u3', phone: '+1234567892' },
+];
+
+export const MOCK_STUDENTS: Student[] = [
+  { 
+    id: 's1', name: 'Leo Smith', age: 4, dob: '2019-05-15', class: 'Sunflowers', 
+    parentName: 'Emily Parent', parentId: 'u3', photo: 'https://i.pravatar.cc/150?u=s1', 
+    status: 'active', balance: 0, attendanceToday: 'present', gender: 'male', address: '123 Main St, City',
+    medical: { allergies: ['Peanuts'], medications: [], bloodType: 'O+', emergencyContact: 'Emily Parent', emergencyPhone: '+1234567892' }
+  },
+  { 
+    id: 's2', name: 'Mia Wong', age: 3, dob: '2020-08-20', class: 'Butterflies', 
+    parentName: 'David Wong', parentId: 'u4', photo: 'https://i.pravatar.cc/150?u=s2', 
+    status: 'active', balance: 500, attendanceToday: 'absent', gender: 'female', address: '456 Oak Ave, City',
+    medical: { allergies: [], medications: ['Inhaler'], bloodType: 'A+', emergencyContact: 'David Wong', emergencyPhone: '+1234567893' }
+  },
+  { 
+    id: 's3', name: 'Ahmed Ali', age: 5, dob: '2018-02-10', class: 'Sunflowers', 
+    parentName: 'Fatima Ali', parentId: 'u5', photo: 'https://i.pravatar.cc/150?u=s3', 
+    status: 'active', balance: 0, attendanceToday: 'late', gender: 'male', address: '789 Pine Ln, City',
+    medical: { allergies: [], medications: [], bloodType: 'B-', emergencyContact: 'Fatima Ali', emergencyPhone: '+1234567894' }
+  },
+  { 
+    id: 's4', name: 'Sofia Rodriguez', age: 4, dob: '2019-11-05', class: 'Butterflies', 
+    parentName: 'Carlos Rodriguez', parentId: 'u6', photo: 'https://i.pravatar.cc/150?u=s4', 
+    status: 'active', balance: 1200, gender: 'female', address: '101 Cedar Rd, City',
+    medical: { allergies: ['Dairy'], medications: [], bloodType: 'AB+', emergencyContact: 'Carlos', emergencyPhone: '+1234567895' }
+  },
+];
+
+export const MOCK_INVOICES: Invoice[] = [
+  { id: 'inv1', studentId: 's1', studentName: 'Leo Smith', amount: 1200, date: '2023-10-01', dueDate: '2023-10-15', status: 'paid', description: 'October Tuition' },
+  { id: 'inv2', studentId: 's2', studentName: 'Mia Wong', amount: 500, date: '2023-10-01', dueDate: '2023-10-15', status: 'pending', description: 'Field Trip Fee' },
+  { id: 'inv3', studentId: 's4', studentName: 'Sofia Rodriguez', amount: 1200, date: '2023-09-01', dueDate: '2023-09-15', status: 'overdue', description: 'September Tuition' },
+];
+
+export const MOCK_MESSAGES: Message[] = [
+  { id: 'm1', senderId: 'u3', senderName: 'Emily Parent', receiverId: 'u1', content: 'Hi, will the nursery be open tomorrow?', timestamp: '10:30 AM', read: true },
+  { id: 'm2', senderId: 'u1', senderName: 'Sarah Manager', receiverId: 'u3', content: 'Yes, Emily. Regular hours.', timestamp: '10:35 AM', read: true },
+  { id: 'm3', senderId: 'u2', senderName: 'John Teacher', receiverId: 'u1', content: 'Submitted the daily report.', timestamp: '4:00 PM', read: false },
+];
+
+export const MOCK_EVENTS: Event[] = [
+  { id: 'e1', title: 'Color Day', date: '2023-10-25', time: '10:00 AM', location: 'Playground', description: 'Kids should wear their favorite color.', type: 'fun' },
+  { id: 'e2', title: 'Parent Meeting', date: '2023-10-30', time: '05:00 PM', location: 'Main Hall', description: 'Discussing the new curriculum.', type: 'academic' },
+  { id: 'e3', title: 'National Holiday', date: '2023-11-01', time: 'All Day', location: '-', description: 'Nursery closed.', type: 'holiday' },
+];
+
+export const MOCK_GALLERY: GalleryItem[] = [
+  { id: 'g1', url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=300', title: 'Art Class', date: '2023-10-20', class: 'Sunflowers' },
+  { id: 'g2', url: 'https://images.unsplash.com/photo-1560785496-ad104d861ce7?auto=format&fit=crop&q=80&w=300', title: 'Garden Play', date: '2023-10-18', class: 'All' },
+  { id: 'g3', url: 'https://images.unsplash.com/photo-1587654780291-39c940483731?auto=format&fit=crop&q=80&w=300', title: 'Reading Time', date: '2023-10-15', class: 'Butterflies' },
+  { id: 'g4', url: 'https://images.unsplash.com/photo-1596464716127-f9a0639b9104?auto=format&fit=crop&q=80&w=300', title: 'Music Session', date: '2023-10-10', class: 'Sunflowers' },
+];
+
+export const MOCK_STAFF: StaffMember[] = [
+  { id: 'st1', name: 'John Teacher', role: 'Teacher', phone: '+1234567891', email: 'john@nursery.com', avatar: 'https://i.pravatar.cc/150?u=st1', status: 'active' },
+  { id: 'st2', name: 'Alice Nurse', role: 'Nurse', phone: '+1234567899', email: 'alice@nursery.com', avatar: 'https://i.pravatar.cc/150?u=st2', status: 'active' },
+  { id: 'st3', name: 'Bob Driver', role: 'Driver', phone: '+1234567888', email: 'bob@nursery.com', avatar: 'https://i.pravatar.cc/150?u=st3', status: 'leave' },
+];
+
+export const MOCK_STATS: DashboardStats = {
+  totalStudents: 45,
+  staffPresent: 8,
+  attendanceRate: 92,
+  revenueThisMonth: 15400,
+};
+
+export const TRANSLATIONS = {
+  en: {
+    dashboard: 'Dashboard',
+    students: 'Students',
+    attendance: 'Attendance',
+    finance: 'Finance',
+    messages: 'Messages',
+    settings: 'Settings',
+    calendar: 'Calendar',
+    gallery: 'Gallery',
+    staff: 'Staff',
+    logout: 'Logout',
+    welcome: 'Welcome back',
+    totalStudents: 'Total Students',
+    staffPresent: 'Staff Present',
+    attendanceRate: 'Attendance Rate',
+    monthlyRevenue: 'Monthly Revenue',
+    recentActivity: 'Recent Activity',
+    viewAll: 'View All',
+    search: 'Search...',
+    addStudent: 'Add Student',
+    filter: 'Filter',
+    status: 'Status',
+    action: 'Action',
+    present: 'Present',
+    absent: 'Absent',
+    late: 'Late',
+    paid: 'Paid',
+    pending: 'Pending',
+    overdue: 'Overdue',
+    studentName: 'Student Name',
+    class: 'Class',
+    parent: 'Parent',
+    balance: 'Balance',
+    markAttendance: 'Mark Attendance',
+    invoice: 'Invoice',
+    amount: 'Amount',
+    date: 'Date',
+    sendMessage: 'Send Message',
+    typeMessage: 'Type a message...',
+    role: 'Role',
+    switchRole: 'Simulate Role Switch',
+    darkMode: 'Dark Mode',
+    language: 'Language',
+    profile: 'Profile',
+    upload: 'Upload Document',
+    medicalInfo: 'Medical Info',
+    allergies: 'Allergies',
+    medications: 'Medications',
+    emergencyContact: 'Emergency Contact',
+    save: 'Save',
+    cancel: 'Cancel',
+    addNew: 'Add New',
+    events: 'Events',
+    photos: 'Photos',
+    contactList: 'Contacts',
+    staffManagement: 'Staff Management',
+    active: 'Active',
+    onLeave: 'On Leave',
+    dob: 'Date of Birth',
+    address: 'Address',
+    gender: 'Gender',
+    createInvoice: 'Create Invoice',
+  },
+  ar: {
+    dashboard: 'لوحة التحكم',
+    students: 'الطلاب',
+    attendance: 'الحضور',
+    finance: 'المالية',
+    messages: 'الرسائل',
+    settings: 'الإعدادات',
+    calendar: 'التقويم',
+    gallery: 'المعرض',
+    staff: 'الموظفين',
+    logout: 'تسجيل خروج',
+    welcome: 'مرحباً بك',
+    totalStudents: 'مجموع الطلاب',
+    staffPresent: 'الموظفين الحضور',
+    attendanceRate: 'نسبة الحضور',
+    monthlyRevenue: 'الإيرادات الشهرية',
+    recentActivity: 'النشاط الأخير',
+    viewAll: 'عرض الكل',
+    search: 'بحث...',
+    addStudent: 'إضافة طالب',
+    filter: 'تصفية',
+    status: 'الحالة',
+    action: 'إجراء',
+    present: 'حاضر',
+    absent: 'غائب',
+    late: 'متأخر',
+    paid: 'مدفوع',
+    pending: 'معلق',
+    overdue: 'متأخر',
+    studentName: 'اسم الطالب',
+    class: 'الفصل',
+    parent: 'ولي الأمر',
+    balance: 'الرصيد',
+    markAttendance: 'تسجيل الحضور',
+    invoice: 'الفاتورة',
+    amount: 'المبلغ',
+    date: 'التاريخ',
+    sendMessage: 'إرسال رسالة',
+    typeMessage: 'اكتب رسالة...',
+    role: 'الدور',
+    switchRole: 'تبديل الدور (تجريبي)',
+    darkMode: 'الوضع الليلي',
+    language: 'اللغة',
+    profile: 'الملف الشخصي',
+    upload: 'رفع مستند',
+    medicalInfo: 'المعلومات الطبية',
+    allergies: 'الحساسية',
+    medications: 'الأدوية',
+    emergencyContact: 'اتصال الطوارئ',
+    save: 'حفظ',
+    cancel: 'إلغاء',
+    addNew: 'إضافة جديد',
+    events: 'الفعاليات',
+    photos: 'الصور',
+    contactList: 'جهات الاتصال',
+    staffManagement: 'إدارة الموظفين',
+    active: 'نشط',
+    onLeave: 'في إجازة',
+    dob: 'تاريخ الميلاد',
+    address: 'العنوان',
+    gender: 'النوع',
+    createInvoice: 'إنشاء فاتورة',
+  }
+};

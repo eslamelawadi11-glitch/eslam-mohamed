@@ -1,0 +1,5 @@
+{
+  "name": "Nursery Manager",
+  "description": "A comprehensive management system for nurseries and kindergartens featuring role-based access, attendance tracking, financial management, and bilingual (Arabic/English) support.",
+  "requestFramePermissions": []
+}
